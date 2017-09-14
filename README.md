@@ -19,17 +19,53 @@ Used environment:
 - Azure Standard A1 Virtual Machine (1 Core, 1.75 GB memory)
 - Client test tool on same machine
 
-## Tests
+## Description Tests
 
 1] Root test
 
 Description: Request the SensorThings server root document
 
-file: 1_get_root_document.sh
+Amount: 100.000 times, concurrency 5
 
 ```
-$ ab -n 5000 -c 5 http://localhost:8080/v1.0
+$ sh 1_get_root_document.sh
 ```
+
+2] Deep insert configuration
+
+Description: Deep insert thing, location, sensor, observedproperty, datastream
+
+Amount: 100.000 times, concurrency 5
+
+3] Get Observations
+
+Description: get observations
+
+Amount: 100.000 times, concurrency 5
+
+4] Post Observation
+
+Description: post observations
+
+Amount: 100.000 times, concurrency 5
+
+4] Get Observations by datastream
+
+Description: post observations
+
+Amount: 100.000 times, concurrency 5
+
+5] Get observations by datatstream with OData filter
+
+todo
+
+6] Create 100000 datastreams
+
+todo
+
+7] Create 100000 observations 
+
+todo
 
 ## Results
 
@@ -39,4 +75,9 @@ server version: https://github.com/gost/server/commit/04171e4111917b5a16673559a4
 database version: https://github.com/gost/gost-db/commit/afe835f003af3f022b420c92493de16d95a189e0
 
 
-Test 1: 825 request p/s
+
+| Test     | Duration (s)  |  Request/second | time per request (ms) |
+|----------|---------------|-----------------|-----------------------|
+| test 1   |  121          | 825             | 1.2                   |
+| test 2   |               |                 |                       |
+
