@@ -16,7 +16,7 @@ $ cd tests
 
 Used environment: 
 
-- Azure Standard A1 Virtual Machine (1 Core, 1.75 GB memory)
+- Azure Standard A1 Virtual Machine with Ubuntu 16.10 (1 Core, 1.75 GB memory, 30GB disk)
 - Client test tool on same machine
 
 ## Description Tests
