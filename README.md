@@ -8,6 +8,8 @@ This repository contains the benchmarks tests and results.
 $ sudo apt-get install apache2-utils
 $ wget https://raw.githubusercontent.com/gost/benchmarks/master/docker-compose/docker-compose.yml
 $ docker-compose up -d 
+$ git clone https://github.com/gost/benchmarks.git
+$ cd tests
 ```
 
 ## Environment
@@ -23,8 +25,10 @@ Used environment:
 
 Description: Request the SensorThings server root document
 
+file: 1_get_root_document.sh
+
 ```
-$ ab -n 5000 -c 5 http://gosttest1.cloudapp.net:8080/v1.0
+$ ab -n 5000 -c 5 http://localhost:8080/v1.0
 ```
 
 ## Results
