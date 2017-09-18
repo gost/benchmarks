@@ -18,6 +18,7 @@ services:
             - "8080:8080"
         environment:
             GOST_DB_HOST: gost-db
+            GOST_LOG_VERBOSE_FLAG: "false"
 volumes:
     gost_conf: {}
     postgis: {}

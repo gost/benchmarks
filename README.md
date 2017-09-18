@@ -55,7 +55,7 @@ Description: post observations
 
 Amount: 100.000 times, concurrency 5
 
-5] Get observations by datatstream with OData filter
+5] Get observations by datastream with OData filter
 
 todo
 
