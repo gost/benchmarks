@@ -30,7 +30,7 @@ Description: Request the SensorThings server root document
 Amount: 100.000 times, concurrency 5
 
 ```
-$ sh 1_get_root_document.sh
+$ ab -n 100000 -k -c 50 http://localhost:8080/v1.0
 ```
 
 2] Deep insert configuration
@@ -39,9 +39,13 @@ Description: Deep insert thing, location, sensor, observedproperty, datastream
 
 Amount: 100.000 times, concurrency 5
 
-3] Get Observations
+```
+$ ab -n 100000 -k -c 50 -X POST http://localhost:8080/v1.0
+```
 
-Description: get observations
+3] Insert Observations
+
+Description: insert observations
 
 Amount: 100.000 times, concurrency 5
 
