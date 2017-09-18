@@ -28,7 +28,7 @@ Used environment:
 Description: Request the SensorThings server root document
 
 ```
-$ ab -n 20000 -k -c 50 http://localhost:8080/v1.0
+$ ab -n 2000 -k -c 50 http://localhost:8080/v1.0
 ```
 
 2] Deep insert configuration
@@ -36,7 +36,7 @@ $ ab -n 20000 -k -c 50 http://localhost:8080/v1.0
 Description: Deep insert thing, location, sensor, observedproperty, datastream
 
 ```
-$ ab -n 20000 -p 2_post_metadata.json -k -c 50  -T 'content-type-:application/json' http://localhost:8080/v1.0/Things
+$ ab -n 2000 -p 2_post_metadata.json -k -c 50  -T 'content-type-:application/json' http://localhost:8080/v1.0/Things
 ```
 
 3] Post Observations
@@ -44,7 +44,7 @@ $ ab -n 20000 -p 2_post_metadata.json -k -c 50  -T 'content-type-:application/js
 Description: insert observations
 
 ```
-$ ab -n 20000 -p 3_post_observation.json -k -c 50  -T 'content-type-:application/json' http://localhost:8080/v1.0/Observations
+$ ab -n 2000 -p 3_post_observation.json -k -c 50  -T 'content-type-:application/json' http://localhost:8080/v1.0/Observations
 ```
 
 4] Get Observations
@@ -52,7 +52,7 @@ $ ab -n 20000 -p 3_post_observation.json -k -c 50  -T 'content-type-:application
 Description: post observations
 
 ```
-$ ab -n 20000 -k -c 50 http://localhost:8080/v1.0/Observations
+$ ab -n 2000 -k -c 50 http://localhost:8080/v1.0/Observations
 ```
 
 
@@ -66,6 +66,6 @@ database version: https://github.com/gost/gost-db/commit/afe835f003af3f022b420c9
 
 | Name     | Test 1 (rps)  |  Test 2 (rps)   | Test 3 (rps)      | Test 4 (rps)  |
 |----------|---------------|-----------------|-------------------|---------------|
-| GOST     | 4625          | 342             | 34                | 242           |
-| ref      |               |                 |                   |               |
+| GOST     | 5000          | 224             | 37                | 284           |
+| ref      | 3085          | 87              | 175               | 5773          |
 
