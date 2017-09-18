@@ -8,10 +8,9 @@ This repository contains the benchmarks tests and results.
 $ sudo apt-get install docker.io
 $ sudo apt-get install apache2-utils
 $ sudo apt install docker-compose
-$ wget https://raw.githubusercontent.com/gost/benchmarks/master/docker-compose.yml
-$ sudo docker-compose up -d 
 $ git clone https://github.com/gost/benchmarks.git
-$ cd tests
+$ cd benchmarks
+$ sudo docker-compose up -d
 ```
 
 ## Environment
