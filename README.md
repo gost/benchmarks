@@ -29,6 +29,7 @@ $ wget https://raw.githubusercontent.com/gost/benchmarks/master/docker-compose.y
 $ sudo docker-compose up -d 
 $ git clone https://github.com/gost/benchmarks.git
 $ cd tests
+$ sh tests.sh
 ```
 
 ## Environment
