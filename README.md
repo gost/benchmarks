@@ -5,6 +5,7 @@ This repository contains the benchmarks tests and results.
 ## Setup
 
 ```
+$ sudo apt-get install docker.io
 $ sudo apt-get install apache2-utils
 $ wget https://raw.githubusercontent.com/gost/benchmarks/master/docker-compose/docker-compose.yml
 $ docker-compose up -d 
