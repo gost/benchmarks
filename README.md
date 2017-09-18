@@ -6,9 +6,9 @@ This repository contains the benchmarks tests and results.
 
 date: 2017-09-18
 
-server version: https://github.com/gost/server/commit/085b21972f9151b559059aa50f7c5ce48930602c
+server version: <a href="https://github.com/gost/server/commit/085b21972f9151b559059aa50f7c5ce48930602c">085b21</a>
 
-database version: https://github.com/gost/gost-db/commit/afe835f003af3f022b420c92493de16d95a189e0
+database version: <a href="https://github.com/gost/gost-db/commit/afe835f003af3f022b420c92493de16d95a189e0">afe835</a>
 
 | Name     | Test 1 (rps)  |  Test 2 (rps)   | Test 3 (rps)      | Test 4 (rps)  |
 |----------|---------------|-----------------|-------------------|---------------|
