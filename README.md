@@ -2,6 +2,22 @@
 
 This repository contains the benchmarks tests and results.
 
+## Results Round 1
+
+date: 2017-09-18
+
+server version: https://github.com/gost/server/commit/085b21972f9151b559059aa50f7c5ce48930602c
+
+database version: https://github.com/gost/gost-db/commit/afe835f003af3f022b420c92493de16d95a189e0
+
+| Name     | Test 1 (rps)  |  Test 2 (rps)   | Test 3 (rps)      | Test 4 (rps)  |
+|----------|---------------|-----------------|-------------------|---------------|
+| GOST     | 5000          | 224             | 37                | 284           |
+| ref      | 3085          | 87              | 175               | 5773          |
+
+
+
+
 ## Setup
 
 ```
@@ -54,18 +70,3 @@ Description: post observations
 ```
 $ ab -n 2000 -k -c 50 http://localhost:8080/v1.0/Observations
 ```
-
-
-## Results
-
-date: 2017-09-18
-
-server version: https://github.com/gost/server/commit/085b21972f9151b559059aa50f7c5ce48930602c
-
-database version: https://github.com/gost/gost-db/commit/afe835f003af3f022b420c92493de16d95a189e0
-
-| Name     | Test 1 (rps)  |  Test 2 (rps)   | Test 3 (rps)      | Test 4 (rps)  |
-|----------|---------------|-----------------|-------------------|---------------|
-| GOST     | 5000          | 224             | 37                | 284           |
-| ref      | 3085          | 87              | 175               | 5773          |
-
