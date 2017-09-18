@@ -21,6 +21,7 @@ database version: <a href="https://github.com/gost/gost-db/commit/afe835f003af3f
 ## Setup
 
 ```
+$ sudo apt-get update
 $ sudo apt-get install docker.io
 $ sudo apt-get install apache2-utils
 $ sudo apt install docker-compose
