@@ -8,16 +8,17 @@ This repository contains the benchmarks tests and results.
 $ sudo apt-get install docker.io
 $ sudo apt-get install apache2-utils
 $ sudo apt install docker-compose
+$ wget https://raw.githubusercontent.com/gost/benchmarks/master/docker-compose.yml
+$ sudo docker-compose up -d 
 $ git clone https://github.com/gost/benchmarks.git
-$ cd benchmarks
-$ sudo docker-compose up -d
+$ cd tests
 ```
 
 ## Environment
 
 Used environment: 
 
-- Azure Standard A1 Virtual Machine with Ubuntu 16.10 (1 Core, 1.75 GB memory, 30GB disk)
+- Azure Standard D2s v3 Virtual Machine with Ubuntu 17 (2 Core, 8 GB memory, 30GB disk)
 - Client test tool on same machine
 
 ## Description Tests
@@ -26,64 +27,45 @@ Used environment:
 
 Description: Request the SensorThings server root document
 
-Amount: 100.000 times, concurrency 5
-
 ```
-$ ab -n 100000 -k -c 50 http://localhost:8080/v1.0
+$ ab -n 20000 -k -c 50 http://localhost:8080/v1.0
 ```
 
 2] Deep insert configuration
 
 Description: Deep insert thing, location, sensor, observedproperty, datastream
 
-Amount: 100.000 times, concurrency 5
-
 ```
-$ ab -n 100000 -k -c 50 -X POST http://localhost:8080/v1.0
+$ ab -n 20000 -p 2_post_metadata.json -k -c 50  -T 'content-type-:application/json' http://localhost:8080/v1.0/Things
 ```
 
-3] Insert Observations
+3] Post Observations
 
 Description: insert observations
 
-Amount: 100.000 times, concurrency 5
+```
+$ ab -n 20000 -p 3_post_observation.json -k -c 50  -T 'content-type-:application/json' http://localhost:8080/v1.0/Observations
+```
 
-4] Post Observation
-
-Description: post observations
-
-Amount: 100.000 times, concurrency 5
-
-4] Get Observations by datastream
+4] Get Observations
 
 Description: post observations
 
-Amount: 100.000 times, concurrency 5
+```
+$ ab -n 20000 -k -c 50 http://localhost:8080/v1.0/Observations
+```
 
-5] Get observations by datastream with OData filter
-
-todo
-
-6] Create 100000 datastreams
-
-todo
-
-7] Create 100000 observations 
-
-todo
 
 ## Results
 
-date: 2017-09-14
+date: 2017-09-18
 
-server version: https://github.com/gost/server/commit/04171e4111917b5a16673559a4bd1dc97663914a
+server version: https://github.com/gost/server/commit/085b21972f9151b559059aa50f7c5ce48930602c
 
 database version: https://github.com/gost/gost-db/commit/afe835f003af3f022b420c92493de16d95a189e0
 
-
-
-| Test     | Duration (s)  |  Request/second | time per request (ms) |
-|----------|---------------|-----------------|-----------------------|
-| test 1   |  121          | 825             | 1.2                   |
-| test 2   |               |                 |                       |
+| Name     | Test 1 (rps)  |  Test 2 (rps)   | Test 3 (rps)      | Test 4 (rps)  |
+|----------|---------------|-----------------|-------------------|---------------|
+| GOST     | 4625          | 342             | 34                | 242           |
+| ref      |               |                 |                   |               |
 
