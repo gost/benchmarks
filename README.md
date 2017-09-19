@@ -12,8 +12,8 @@ database version: <a href="https://github.com/gost/gost-db/commit/afe835f003af3f
 
 | Name     | Test 1 (rps)  |  Test 2 (rps)   | Test 3 (rps)      | Test 4 (rps)  |
 |----------|---------------|-----------------|-------------------|---------------|
-| GOST     | 5000          | 224             | 37                | 284           |
-| ref      | 3085          | 87              | 175               | 5773          |
+| GOST     | 15290         | 604             | 542               | 1659          |
+| ref      | 1226          | 71              | 177               | 230           |
 
 
 
