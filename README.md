@@ -15,8 +15,7 @@ database version: <a href="https://github.com/gost/gost-db/commit/afe835f003af3f
 | GOST     | 15290         | 604             | 542               | 1659          |
 | ref      | 1226          | 71              | 177               | 230           |
 
-
-
+rps = request per second
 
 ## Setup
 
