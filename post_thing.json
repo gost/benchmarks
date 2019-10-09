@@ -1,0 +1,8 @@
+{
+    "name": "test thing",
+    "description": "ab test create thing",
+    "properties": {
+        "custom_id": "myid",
+        "owner": "tim"
+    }
+}

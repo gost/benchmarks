@@ -1,0 +1,88 @@
+host: http://localhost:8080
+version: v1.0
+requests: 2000       # Default number of requests to perform, can be overwritten in test
+concurrency: 10      # Default number of multiple requests to make at a time, can be overwritten in test
+tests:
+  - name: get_root
+    requests: 2000          # Overwrite default number of requests to perform
+    concurrency: 50         # Overwrite default number of multiple requests to make at a time
+    endpoint:               # Endpoint to get or post to, endpoint will be added after host/version
+    type: GET               # GET, PUT or POST
+    file:                   # filename of JSON to post or put
+  - name: post_thing_with_entities
+    endpoint: /Things
+    type: POST
+    file: post_metadata.json
+  - name: post_thing
+    endpoint: /Things
+    type: POST
+    file: post_thing.json
+  - name: post_location
+    endpoint: /Locations
+    type: POST
+    file: post_location.json
+  - name: post_location_by_thing
+    endpoint: /Things(1)/Locations
+    type: POST
+    file: post_location.json     
+  - name: post_sensor
+    endpoint: /Sensors
+    type: POST
+    file: post_sensor.json
+  - name: post_observed_property
+    endpoint: /ObservedProperties
+    type: POST
+    file: post_observed_property.json
+  - name: post_observations
+    endpoint: /Observations
+    type: POST
+    file: post_observation.json
+  - name: post_observations_with_foi
+    endpoint: /Datastreams(2)/Observations
+    type: POST
+    file: post_observation_with_foi.json
+  - name: get_things
+    endpoint: /Things
+    type: GET  
+  - name: get_things_by_property
+    endpoint: /Things?$filter=properties/custom_id eq 'myid',
+    type: GET  
+  - name: get_things_expand_location
+    endpoint: /Things?$expand=Locations,
+    type: GET  
+  - name: get_thing_expand_historical_location
+    endpoint: /Things(1)?$expand=HistoricalLocations,
+    type: GET  
+  - name: get_things_filter_select_expand
+    endpoint: /Things?$filter=properties/property2 eq 'it glows in the dark'&$select=id,name&$expand=Locations,Datastreams($select=id,name),Datastreams/Observations($select=result,phenomenonTime)&$orderby=id asc
+    type: GET  
+  - name: get_locations
+    endpoint: /Locations
+    type: GET  
+  - name: get_historical_locations
+    endpoint: /HistoricalLocations
+    type: GET  
+  - name: get_sensors
+    endpoint: /Sensors
+    type: GET  
+  - name: get_sensors_by_name
+    endpoint: /Sensors?$filter=name eq 'My Sensor'
+    type: GET 
+  - name: get_sensors_with_things
+    endpoint: /Sensors?$filter=name eq 'This is a name'&$expand=Datastreams/Thing
+    type: GET 
+  - name: get_observed_properties
+    endpoint: /ObservedProperties
+    type: GET  
+  - name: get_observations
+    endpoint: /Observations
+    type: GET  
+  - name: get_observations_by_datastream
+    endpoint: /Datastreams(1)/Observations
+    type: GET  
+  - name: get_observations_filter_by_result
+    endpoint: /Observations?$filter=result gt 1
+    type: GET  
+  - name: get_observations_filter_by_phenomenontime
+    endpoint: /Observations?$filter=phenomenonTime gt '2019-01-01T05:10:15.111Z' and phenomenonTime le now()
+    type: GET  

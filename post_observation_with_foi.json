@@ -1,0 +1,15 @@
+{
+  "result" : 38,
+  "resultTime": "2015-04-13T00:00:05.000Z",
+  "resultQuality": "Very Nice!",
+  "parameters": {"one": "Test 1", "two": "Test 2"},
+  "FeatureOfInterest": {
+    "name": "Test FOI",
+    "description": "Test FOI Description",
+    "encodingType": "application/vnd.geo+json",
+    "feature": {
+        "coordinates": [51.08386,-114.13036],
+        "type": "Point"
+      }
+  }
+}

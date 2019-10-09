@@ -1,0 +1,10 @@
+{
+    "name": "Somewhere",
+    "description": "my backyard",
+    "encodingType": "application/vnd.geo+json",
+    "location": {
+        "type": "Point",
+        "coordinates": [-117.123,
+        54.123]
+    }
+}

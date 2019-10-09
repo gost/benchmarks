@@ -1,0 +1,6 @@
+{   
+    "name": "My Sensor",
+    "description": "My test sensor",
+    "encodingType": "application/pdf",
+    "metadata": "metadata"
+}
